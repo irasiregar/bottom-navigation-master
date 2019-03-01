@@ -9,19 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
+
+        <activity android:name=".ui.HomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".ui.ProfilDesa" />
-        <activity android:name=".BottomLainnya" />
-        <activity android:name=".LainnyaFragment" />
-        <activity android:name=".ui.LainnyaFragment" />
-        <activity android:name=".ProfilDesa" />
-        <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.Layanan" />
         <activity android:name=".ui.Pengumuman" />
         <activity android:name=".ui.PotensiDesa" />

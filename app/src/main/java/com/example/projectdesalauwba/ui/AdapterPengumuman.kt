@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.projectdesalauwba.R
+import com.example.projectdesalauwba.config.Config
 import kotlinx.android.synthetic.main.item_pengumuman.view.*
 
 class AdapterPengumuman(private  val list:MutableList<PengumumanModel>,private val context: Context):
@@ -30,6 +32,7 @@ class AdapterPengumuman(private  val list:MutableList<PengumumanModel>,private v
         p0.btnread.setOnClickListener{
 
         }
+        Glide.with(context).load(Config.url_gambar + item.gambar ).into(p0.image)
 
     }
 
