@@ -25,7 +25,7 @@ class Pengumuman : AppCompatActivity() {
     inner class get_data_pengumuman : AsyncTask<String,Void,String>(){
         override fun onPreExecute() {
             super.onPreExecute()
-            pd= ProgressDialog.show(this@Pengumuman,"","Wait",true,false)
+            pd= ProgressDialog.show(this@Pengumuman,"","Wait",true,true)
         }
 
         override fun doInBackground(vararg params: String?): String {
@@ -37,11 +37,13 @@ class Pengumuman : AppCompatActivity() {
 
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
+            pd?.dismiss()
             val objek=JSONObject(result)
             val array=objek.getJSONArray("data")
             for (i in 0 until array.length()){
                 val data=array.getJSONObject(i)
                 val model=PengumumanModel()
+                model.id=data.getString("id_pengumuman")
                 model.gambar=data.getString("gambar")
                 model.judul=data.getString("judul")
                 model.tanggal=data.getString("tanggal")

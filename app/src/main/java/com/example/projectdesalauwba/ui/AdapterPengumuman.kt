@@ -1,6 +1,7 @@
 package com.example.projectdesalauwba.ui
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,9 @@ class AdapterPengumuman(private  val list:MutableList<PengumumanModel>,private v
         p0.judul.text=item.judul
         p0.tanggal.text=item.tanggal
         p0.btnread.setOnClickListener{
+            val intent=Intent(context,DetailPengumuman::class.java)
+            intent.putExtra(Config.id,item.id)
+            context.startActivity(intent)
 
         }
         Glide.with(context).load(Config.url_gambar + item.gambar ).into(p0.image)
